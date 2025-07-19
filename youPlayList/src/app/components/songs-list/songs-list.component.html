@@ -1,0 +1,33 @@
+<div class="songs scroll-tabla">
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+        <th scope="col">Song</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Top Mundial</th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--el componente del boton like emoji implementa el servicio a traves de la cancion-->
+        @for (song of songs; track song.name){
+            <tr>
+                <td>{{song.name}}</td>
+                <td>{{song.artist}}</td>
+                <td>{{song.gender}}</td>
+                <td>{{song.topMundial}}</td>
+                <td>
+                    <app-btn-like-it [song]="song"></app-btn-like-it>
+                </td>
+            </tr>
+        
+    }@empty {
+        <tr>
+            <td>No hay canciones</td>
+        </tr>
+    }
+    </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,17 @@
+<p class="text-white text-center">My likes</p>
+<table>
+    <thead>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        @for(like of likeList; track like.name){
+        <tr>
+            <td class="text-white">{{like.name}}</td>
+        </tr>
+        }@empty {
+        <td class="text-white">select your likes!</td>
+        }
+    </tbody>
+</table>
+

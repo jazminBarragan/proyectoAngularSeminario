@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row suggestArtist">
+        <h3 class="text-white text-center">Is your favorite artist missing from our website?</h3>
+        <p class="text-white text-center">Fill out the form with their name and music genre. We want your playlist to be perfect, so let us know who you’d like to hear.</p>
+    </div>
+</div>
+<div class="container-fluid text-center">
+    <div class="row text-center">
+        <div class="col-12">
+        <form [formGroup]="form" (ngSubmit)="OnSubmit()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white text-start w-100">Song</label>
+                <input type="text" class="form-control" formControlName="nameSong">
+                @if(form.get("nameSong")?.invalid && form.get("nameSong")?.touched){
+                    @if(form.get("nameSong")?.hasError("required")){
+                        <div id="emailHelp" class="form-text text-start w-100 forms-error">Complete song name!!!</div>   
+                    }
+                }@else {
+                    <div id="emailHelp" class="form-text text-white text-start w-100">Song's name.</div>
+                }  
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white text-start w-100">Artist</label>
+                <input type="email" class="form-control" aria-describedby="emailHelp" formControlName="nameArtist">
+                @if(form.get("nameArtist")?.invalid && form.get("nameArtist")?.touched){
+                    @if(form.get("nameArtist")?.hasError("required")){
+                        <div id="emailHelp" class="form-text text-start w-100 forms-error">Complete name!!!</div>   
+                    }
+                } @else {
+                    <div id="emailHelp" class="form-text text-white text-start w-100">Artist's full name.</div>
+                }
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white text-start w-100">Gender</label>
+                <input type="text" class="form-control" formControlName="nameGender">
+                @if(form.get("nameGender")?.invalid && form.get("nameGender")?.touched){
+                    @if(form.get("nameGender")?.hasError("required")){
+                        <div id="emailHelp" class="form-text text-start w-100 forms-error">Complete gender!!!</div>   
+                    }
+                }@else {
+                    <div id="emailHelp" class="form-text text-white text-start w-100">Artist's gender.</div>
+                }  
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white text-start w-100">topMundial</label>
+                <input type="text" class="form-control" formControlName="topMundial">
+                @if(form.get("topMundial")?.invalid && form.get("topMundial")?.touched){
+                    @if(form.get("topMundial")?.hasError("required")){
+                        <div id="emailHelp" class="form-text text-start w-100 forms-error">Complete topMundial!!!</div>   
+                    }
+                }@else {
+                    <div id="emailHelp" class="form-text text-white text-start w-100">topMundial.</div>
+                }  
+            </div>
+            <button type="submit" class="btn btn-send" [disabled]="form.invalid">Send</button>
+            </form>
+        </div>
+    </div>
+</div>

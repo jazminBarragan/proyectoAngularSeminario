@@ -1,0 +1,27 @@
+  <nav class="navbar bg-body-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand title" [routerLink]="'/home'" (click)="selectGender('')" >YouPlayList</a>
+      <li class="nav-item">
+        <a class="nav-link active text-white" aria-current="page" [routerLink]="'/home'" (click)="selectGender('')">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active text-white" aria-current="page" [routerLink]="'/suggestArtist'" (click)="selectGender('')">Suggest artist</a>
+      </li>
+      <div>
+        <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Genders
+              </a>
+              <ul class="dropdown-menu bg-dark">
+                <li><a class="dropdown-item text-white hover-dark"(click)="selectGender('Reggaetón')" [routerLink]="'/home'">Reggaeton</a></li>
+                <li><a class="dropdown-item text-white hover-dark"(click)="selectGender('Jazz')" [routerLink]="'/home'">Jazz</a></li>
+                <li><a class="dropdown-item text-white hover-dark"(click)="selectGender('Bachata')" [routerLink]="'/home'">Bachata</a></li>
+              </ul>
+        </li>
+      </div>
+      <form class="d-flex" role="search" [formGroup]="form" (ngSubmit)="searchSong()">
+        <input class="form-control me-2" type="search" placeholder="Search a song" aria-label="Search" formControlName="search"/>
+        <button class="btn btn-search" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
