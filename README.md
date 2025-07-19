@@ -24,3 +24,4 @@ Fueron puestos en práctica los conocimientos del seminario;
 - GitHub:
   https://github.com/jazminBarragan/proyectoAngularSeminario.git
 - StackBlitz:
+  https://stackblitz.com/~/github.com/jazminBarragan/proyectoAngularSeminario
